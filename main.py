@@ -12,7 +12,7 @@ connection.login(user=EMAIL,
 
 #TO MAKE IT MORE EFFICIENT INPUT DICTIONARY CONTAINING LOCATION AND GEOGRAPHICAL MEASUREMENTS
 
-MY_LAT,MY_LONG = (19.232389,73.087761)  #location:Thrissur
+MY_LAT,MY_LONG = (19.232389,73.087761)  #location:Mumbai
 parameters = {"lat":MY_LAT, "lon":MY_LONG,
               "appid": APP_ID,
               "exclude":"current,minutely,daily"}
@@ -31,7 +31,7 @@ for items in data["hourly"][0:13]:
 if will_rain:
     connection.sendmail(from_addr=EMAIL,to_addrs=EMAIL ,msg=f"Subject:Rain alert\n\nTake a umbrella")
     connection.close()
-    print("bring a umbrella")
+    #print("bring a umbrella")
     print(items["temp"])
 #print(data["hourly"][0]["weather"][0]["id"])
 
